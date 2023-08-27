@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block title %} Minnesota Twins Roster {% endblock
+%} {% block content %}
+<table id="Players" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Jersey #</th>
+      <th>Player Name</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for player in roster %}
+    <tr>
+      <td>{{ player[0] }}</td>
+      <td>{{ player[1] }}</td>
+      <td>{{ player[2] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
