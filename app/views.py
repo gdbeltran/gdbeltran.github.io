@@ -1,6 +1,6 @@
 from flask import render_template
 from datetime import datetime
-from . import app
+from __init__ import app
 import statsapi
 import pandas as pd
 from operator import itemgetter
@@ -22,16 +22,3 @@ def home():
 @app.route("/twinsroster/")
 def twinsroster():
     return render_template("twinsroster.html",roster=roster)
-
-@app.route("/hello/")
-@app.route("/hello/<name>")
-def hello_there(name = None):
-    return render_template(
-        "hello_there.html",
-        name=name,
-        date=datetime.now()
-    )
-
-@app.route("/api/data")
-def get_data():
-    return app.send_static_file("data.json")
